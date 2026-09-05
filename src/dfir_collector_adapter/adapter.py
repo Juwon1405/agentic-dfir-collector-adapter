@@ -1,6 +1,6 @@
 """
 Main adapter — turns a Velociraptor offline-collector ZIP into the
-evidence_root layout used by Agentic-DART.
+evidence_root layout used by Agentic-DFIR.
 
 Velociraptor offline collector outputs (typical layout):
     archive.zip
@@ -14,7 +14,7 @@ Velociraptor offline collector outputs (typical layout):
     |   +-- auto/C:/Windows/AppCompat/Programs/Amcache.hve
     |   +-- ...
 
-Target evidence_root layout (what Agentic-DART expects):
+Target evidence_root layout (what Agentic-DFIR expects):
     evidence_root/
     +-- manifest.json
     +-- Prefetch/
@@ -91,7 +91,7 @@ def adapt(
     include_sha256_index: bool = True,
 ) -> AdapterResult:
     """
-    Extract Velociraptor offline-collector ZIP into Agentic-DART
+    Extract Velociraptor offline-collector ZIP into Agentic-DFIR
     evidence_root layout.
 
     Parameters

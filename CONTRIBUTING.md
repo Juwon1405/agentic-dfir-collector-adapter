@@ -6,10 +6,10 @@ This adapter is deliberately small. The goal is to keep it small. Please read th
 
 ## Scope
 
-This repo is **only** the layout-normalization layer between Velociraptor offline-collector ZIPs and the [Agentic-DART](https://github.com/Juwon1405/agentic-dart) `evidence_root/` layout.
+This repo is **only** the layout-normalization layer between Velociraptor offline-collector ZIPs and the [Agentic-DFIR](https://github.com/Juwon1405/agentic-dfir) `evidence_root/` layout.
 
 Things that **belong** here:
-- New artifact patterns in `src/dart_collector_adapter/layout.py`
+- New artifact patterns in `src/dfir_collector_adapter/layout.py`
 - Improvements to `manifest.json` integrity (extra fields, stronger hashing)
 - Bug fixes in path-safety, ZIP traversal handling, large-file streaming
 - Sidecar parser invocation (e.g., calling `EvtxECmd` when available) — planned for v1.1
@@ -17,14 +17,14 @@ Things that **belong** here:
 
 Things that **do not belong** here:
 - Velociraptor agent code, VQL artifacts, or anything that would normally live upstream
-- The forensic analysis itself (that goes in Agentic-DART)
+- The forensic analysis itself (that goes in Agentic-DFIR)
 - A web UI, a database, a service daemon
 
 ## Development
 
 ```bash
-git clone https://github.com/Juwon1405/agentic-dart-collector-adapter
-cd agentic-dart-collector-adapter
+git clone https://github.com/Juwon1405/agentic-dfir-collector-adapter
+cd agentic-dfir-collector-adapter
 pip install -e ".[dev]"
 pytest -q
 ```

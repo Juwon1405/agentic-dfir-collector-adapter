@@ -1,5 +1,5 @@
 """Tests for layout.classify_artifact() — the dispatcher."""
-from dart_collector_adapter.layout import classify_artifact, EVIDENCE_LAYOUT
+from dfir_collector_adapter.layout import classify_artifact, EVIDENCE_LAYOUT
 
 
 def test_prefetch_classified_as_prefetch():

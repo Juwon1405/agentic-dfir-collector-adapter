@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Generate architecture PNGs for agentic-dart-collector-adapter README.
+Generate architecture PNGs for agentic-dfir-collector-adapter README.
 
 Style brief: quiet luxury · dark theme · matches GitHub canvas-dark
 (#0d1117) and the author's site palette.
@@ -20,7 +20,7 @@ TEXT_SEC    = "#8b949e"
 HOST        = "#c97064"   # muted coral
 ADAPTER     = "#79a6dc"   # muted blue
 ROOT        = "#7fb88f"   # muted green
-DART        = "#6db17b"   # muted green
+DFIR_GREEN        = "#6db17b"   # muted green
 MANIFEST    = "#b88dd3"   # muted purple
 
 OUT = Path(__file__).parent.parent / "docs" / "img"
@@ -71,9 +71,9 @@ def diagram_arch():
     ax.set_ylim(0, 56)
     ax.axis("off")
 
-    ax.text(50, 53.5, "agentic-dart-collector-adapter  ·  end-to-end flow",
+    ax.text(50, 53.5, "agentic-dfir-collector-adapter  ·  end-to-end flow",
             ha="center", va="top", fontsize=16, fontweight="bold", color=TEXT_PRI)
-    ax.text(50, 50.5, "incident host  ->  this adapter (analysis server)  ->  Agentic-DART",
+    ax.text(50, 50.5, "incident host  ->  this adapter (analysis server)  ->  Agentic-DFIR",
             ha="center", va="top", fontsize=10.5, color=TEXT_SEC, style="italic")
 
     _zone(ax, 1.5, 7, 22, 41, HOST, "1. Incident host", "short-lived, no install")
@@ -86,7 +86,7 @@ def diagram_arch():
 
     _zone(ax, 26, 7, 46, 41, ADAPTER, "2. Analysis server",
           "Linux or macOS · install once")
-    _box(ax, 28, 26, 19, 14, ADAPTER, title="dart-collector-adapter",
+    _box(ax, 28, 26, 19, 14, ADAPTER, title="dfir-collector-adapter",
          lines=["classify artifacts", "safe-path stream copy",
                 "SHA-256 each file", "write manifest.json"])
     _box(ax, 51, 26, 19, 14, ROOT, title="evidence_root/",
@@ -96,21 +96,21 @@ def diagram_arch():
     _box(ax, 28, 11, 42, 11, MANIFEST, title="manifest 1.2  +  SHA-256 index",
          lines=["chain-of-custody seed",
                 "case_id  ·  source  ·  source_members",
-                "consumed by Agentic-DART as audit entry 0"])
+                "consumed by Agentic-DFIR as audit entry 0"])
     _arrow(ax, 37, 26, 37, 22, color=MANIFEST)
     _arrow(ax, 60, 26, 60, 22, color=MANIFEST)
     _arrow(ax, 23.5, 33, 28, 33, color=HOST,
            label="SCP / SMB / USB", label_offset=1.5)
 
-    _zone(ax, 74.5, 7, 24, 41, DART, "3. Agentic-DART", "same analysis server")
-    _box(ax, 76.5, 26, 20, 14, DART, title="dart_agent",
+    _zone(ax, 74.5, 7, 24, 41, DFIR_GREEN, "3. Agentic-DFIR", "same analysis server")
+    _box(ax, 76.5, 26, 20, 14, DFIR_GREEN, title="dfir_agent",
          lines=["reads evidence_root", "runs playbook v3",
                 "typed read-only MCP tools", "SHA-256 audit chain"])
     _box(ax, 76.5, 10, 20, 14, "#9bb87f", title="findings.json",
          lines=["report.md", "audit.jsonl",
                 "extends chain-of-custody", "from manifest seed"])
-    _arrow(ax, 86.5, 26, 86.5, 24, color=DART)
-    _arrow(ax, 72, 33, 76.5, 33, color=DART, label="read", label_offset=1.5)
+    _arrow(ax, 86.5, 26, 86.5, 24, color=DFIR_GREEN)
+    _arrow(ax, 72, 33, 76.5, 33, color=DFIR_GREEN, label="read", label_offset=1.5)
 
     ax.text(50, 4.0,
             "the adapter installs ONCE on the analysis server  ·  "
@@ -135,7 +135,7 @@ def diagram_roadmap():
     ax.set_ylim(0, 32)
     ax.axis("off")
 
-    ax.text(50, 29.5, "agentic-dart-collector-adapter  ·  phase roadmap",
+    ax.text(50, 29.5, "agentic-dfir-collector-adapter  ·  phase roadmap",
             ha="center", va="top", fontsize=15, fontweight="bold", color=TEXT_PRI)
 
     phases = [

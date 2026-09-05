@@ -1,7 +1,7 @@
 """
 manifest.json writer.
 
-The manifest is the chain-of-custody seed for Agentic-DART:
+The manifest is the chain-of-custody seed for Agentic-DFIR:
 - adapter_version identifies which adapter produced the layout
 - file_count / total_bytes catch silent truncation
 - sha256_index lets downstream tools verify integrity without re-reading the ZIP
@@ -71,7 +71,7 @@ def write_manifest(
             "python": platform.python_version(),
         },
         "adapter": {
-            "name": "agentic-dart-collector-adapter",
+            "name": "agentic-dfir-collector-adapter",
             "version": adapter_version,
         },
         "counters": {

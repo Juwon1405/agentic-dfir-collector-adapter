@@ -2,7 +2,7 @@
 SHA-256 file hashing helpers.
 
 Used both to:
-- pre-compute file hashes for downstream Agentic-DART audit chain entries, and
+- pre-compute file hashes for downstream Agentic-DFIR audit chain entries, and
 - support manifest.json integrity verification.
 
 Symlinks are never followed: a forensic adapter must hash the artefact bytes

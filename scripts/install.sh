@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# install.sh — bootstrap script for agentic-dart-collector-adapter
+# install.sh — bootstrap script for agentic-dfir-collector-adapter
 #
 # What this script does:
 #   1. Detects the host OS/arch.
@@ -10,7 +10,7 @@
 #      the binary being deleted, the script exiting non-zero, and an
 #      error message naming the expected vs. actual hash.
 #   4. (Optional) Installs the Python package via `pip install -e .`
-#      so the `dart-collector-adapter` console script is on PATH.
+#      so the `dfir-collector-adapter` console script is on PATH.
 #
 # Flags:
 #   --skip-checksum       Skip SHA-256 verification of the
@@ -69,7 +69,7 @@ done
 log "Installing Python package (editable)"
 python3 -m pip install --upgrade pip wheel >/dev/null
 python3 -m pip install -e . >/dev/null
-ok "dart-collector-adapter installed (console script: dart-collector-adapter)"
+ok "dfir-collector-adapter installed (console script: dfir-collector-adapter)"
 
 # ─── 2. Velociraptor (optional) ──────────────────────────────────────
 if [[ "$NO_VELOCIRAPTOR" == "true" ]]; then
@@ -227,7 +227,7 @@ if [[ "$(realpath "$BINARY_PATH")" != "$(realpath "$STABLE_BIN" 2>/dev/null || e
     ok "Copied $BINARY_PATH -> $STABLE_BIN (symlink unsupported here)"
   else
     warn "Could not create a plain 'velociraptor' name at $STABLE_BIN;"
-    warn "--source image may not find the binary. Set DART_VELOCIRAPTOR_BIN=$BINARY_PATH"
+    warn "--source image may not find the binary. Set DFIR_VELOCIRAPTOR_BIN=$BINARY_PATH"
   fi
 fi
 

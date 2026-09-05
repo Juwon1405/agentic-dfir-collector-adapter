@@ -90,14 +90,14 @@ sha256_of() {
 # ---------------------------------------------------------------------------
 # Step 1 — adapter (Python, OS-agnostic)
 # ---------------------------------------------------------------------------
-echo "==> Step 1/2: installing dart-collector-adapter (Python)"
+echo "==> Step 1/2: installing dfir-collector-adapter (Python)"
 PYTHON_BIN="$(command -v python3 || command -v python || true)"
 if [[ -z "${PYTHON_BIN}" ]]; then
     echo "error: python3 not found on PATH" >&2
     exit 1
 fi
 "${PYTHON_BIN}" -m pip install --upgrade --user -e "${SCRIPT_DIR}" >/dev/null
-echo "    adapter installed: $(command -v dart-collector-adapter 2>/dev/null || echo '(use python -m dart_collector_adapter.cli)')"
+echo "    adapter installed: $(command -v dfir-collector-adapter 2>/dev/null || echo '(use python -m dfir_collector_adapter.cli)')"
 
 # ---------------------------------------------------------------------------
 # Step 2 — Velociraptor binaries for every (OS, arch) combo
@@ -169,7 +169,7 @@ done
 
 echo ""
 echo "Done."
-echo "  Adapter:               dart-collector-adapter --help"
+echo "  Adapter:               dfir-collector-adapter --help"
 echo "  Velociraptor binaries: ${BIN_DIR}"
 echo ""
 echo "Ship the matching binary to each incident host. For example:"

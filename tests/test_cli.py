@@ -6,7 +6,7 @@ from pathlib import Path
 
 import pytest
 
-from dart_collector_adapter.cli import build_parser, main
+from dfir_collector_adapter.cli import build_parser, main
 
 
 def _build_demo_zip(path: Path) -> None:

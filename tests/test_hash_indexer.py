@@ -4,12 +4,12 @@ from pathlib import Path
 
 import pytest
 
-from dart_collector_adapter.hash_indexer import compute_sha256, compute_sha256_tree
+from dfir_collector_adapter.hash_indexer import compute_sha256, compute_sha256_tree
 
 
 def test_compute_sha256_matches_hashlib(tmp_path: Path):
     p = tmp_path / "x.bin"
-    payload = b"agentic-dart-collector-adapter unit test\n" * 100
+    payload = b"agentic-dfir-collector-adapter unit test\n" * 100
     p.write_bytes(payload)
     expected = hashlib.sha256(payload).hexdigest()
     assert compute_sha256(p) == expected

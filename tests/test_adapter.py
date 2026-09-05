@@ -5,8 +5,8 @@ from pathlib import Path
 
 import pytest
 
-from dart_collector_adapter import adapt
-from dart_collector_adapter.adapter import _safe_target_path
+from dfir_collector_adapter import adapt
+from dfir_collector_adapter.adapter import _safe_target_path
 
 
 @pytest.fixture()

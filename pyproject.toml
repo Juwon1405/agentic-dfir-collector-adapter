@@ -3,9 +3,9 @@ requires = ["setuptools>=68", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "agentic-dart-collector-adapter"
-version = "1.0.1"
-description = "Convert Velociraptor IR collector output into the evidence_root layout for Agentic-DART."
+name = "agentic-dfir-collector-adapter"
+version = "2.0.0"
+description = "Convert Velociraptor IR collector output into the evidence_root layout for Agentic-DFIR."
 authors = [{ name = "Bang Juwon (YuShin)", email = "juwon1405.jp@gmail.com" }]
 license = { text = "MIT" }
 readme = "README.md"
@@ -33,12 +33,12 @@ dev = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/Juwon1405/agentic-dart-collector-adapter"
-Repository = "https://github.com/Juwon1405/agentic-dart-collector-adapter"
-"Companion project" = "https://github.com/Juwon1405/agentic-dart"
+Homepage = "https://github.com/Juwon1405/agentic-dfir-collector-adapter"
+Repository = "https://github.com/Juwon1405/agentic-dfir-collector-adapter"
+"Companion project" = "https://github.com/Juwon1405/agentic-dfir"
 
 [project.scripts]
-dart-collector-adapter = "dart_collector_adapter.cli:main"
+dfir-collector-adapter = "dfir_collector_adapter.cli:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]

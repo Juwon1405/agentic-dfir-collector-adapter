@@ -1,20 +1,32 @@
 # Changelog
 
-All notable changes to **agentic-dart-collector-adapter** are documented here.
-The adapter follows the [Agentic-DART](https://github.com/Juwon1405/agentic-dart)
+All notable changes to **agentic-dfir-collector-adapter** are documented here.
+The adapter follows the [Agentic-DFIR](https://github.com/Juwon1405/agentic-dfir)
 release line.
+
+## [2.0.0] — 2026-09-05 — Renamed to agentic-dfir-collector-adapter
+
+### Changed
+- Renamed alongside the Agentic-DFIR core project. The Python package is now
+  `dfir_collector_adapter`, the console script `dfir-collector-adapter`, and the
+  Velociraptor override variable `DFIR_VELOCIRAPTOR_BIN` (previously
+  `dart_collector_adapter` / `dart-collector-adapter` / `DART_VELOCIRAPTOR_BIN`).
+  Update imports, shell aliases, and environment files accordingly.
+- Version bumped to `2.0.0` because the import path and CLI name changed.
+  No functional change: layout classification, `manifest.json` schema `1.2`,
+  exit codes, and the `--source {zip,image}` behaviour are identical to `1.0.1`.
 
 ## [1.0.1] — 2026-06-10 — Collision-safe manifest provenance
 
 ### Added
-- Module entrypoint `python3 -m dart_collector_adapter` (`__main__.py`).
+- Module entrypoint `python3 -m dfir_collector_adapter` (`__main__.py`).
 - `--source {zip,image}` contract. `zip` keeps the original offline-collector
   behaviour; `image` accepts a raw forensic disk image (`.dd`/`.raw`/`.E01`)
   and runs a documented Velociraptor dead-disk remapping → collection ZIP →
   the existing `layout.py`/`manifest.py` extraction, producing the same
   `evidence_root/manifest.json`.
 - Velociraptor binary resolution order for `--source image`:
-  `--velociraptor-bin` → `DART_VELOCIRAPTOR_BIN` → staged `./bin/` → `PATH`,
+  `--velociraptor-bin` → `DFIR_VELOCIRAPTOR_BIN` → staged `./bin/` → `PATH`,
   with a fail-fast actionable error when none resolves.
 - `--keep-temp` and `--artifact` flags for the image path; intermediate files
   are otherwise removed after each run.
@@ -37,9 +49,9 @@ release line.
 
 ## [1.0.0] — 2026-06-05 — First stable release
 
-First stable release, aligned with Agentic-DART v1.0.0. The adapter's core job —
+First stable release, aligned with Agentic-DFIR v1.0.0. The adapter's core job —
 translating Velociraptor offline-collector output into the `evidence_root`
-layout that Agentic-DART reads — is complete, hardened, and fully tested.
+layout that Agentic-DFIR reads — is complete, hardened, and fully tested.
 
 ### Added
 - This CHANGELOG.

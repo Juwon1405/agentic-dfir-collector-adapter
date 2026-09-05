@@ -15,7 +15,7 @@ import tempfile
 import zipfile
 from pathlib import Path
 
-from dart_collector_adapter import adapt
+from dfir_collector_adapter import adapt
 
 
 def build_demo_zip(zip_path: Path) -> None:

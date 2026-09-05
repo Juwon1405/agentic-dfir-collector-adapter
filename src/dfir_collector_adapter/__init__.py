@@ -1,9 +1,9 @@
 """
-agentic-dart-collector-adapter
+agentic-dfir-collector-adapter
 ==============================
 
 Convert Velociraptor IR collector output into the evidence_root layout
-expected by Agentic-DART (https://github.com/Juwon1405/agentic-dart).
+expected by Agentic-DFIR (https://github.com/Juwon1405/agentic-dfir).
 
 Public surface
 --------------
@@ -20,7 +20,7 @@ from .manifest import write_manifest
 from .hash_indexer import compute_sha256
 
 try:
-    __version__ = _pkg_version("agentic-dart-collector-adapter")
+    __version__ = _pkg_version("agentic-dfir-collector-adapter")
 except PackageNotFoundError:
     __version__ = "0.0.0+unknown"
 

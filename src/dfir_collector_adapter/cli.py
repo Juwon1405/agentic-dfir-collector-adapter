@@ -2,11 +2,11 @@
 Command-line entrypoint:
 
     # offline-collector ZIP (default, original behaviour)
-    python3 -m dart_collector_adapter --source zip \
+    python3 -m dfir_collector_adapter --source zip \
         --input collector.zip --output evidence_root --case-id case-001
 
     # raw forensic disk image (.dd/.raw/.E01) via Velociraptor dead-disk
-    python3 -m dart_collector_adapter --source image \
+    python3 -m dfir_collector_adapter --source image \
         --input disk.E01 --output evidence_root --case-id case-001
 
 Both sources converge on the same layout.py / manifest.py architecture and
@@ -31,10 +31,10 @@ from .image_source import (
 
 def build_parser() -> argparse.ArgumentParser:
     p = argparse.ArgumentParser(
-        prog="dart-collector-adapter",
+        prog="dfir-collector-adapter",
         description=(
             "Convert a Velociraptor offline-collector ZIP, or a raw forensic "
-            "disk image, into the Agentic-DART evidence_root layout (writes "
+            "disk image, into the Agentic-DFIR evidence_root layout (writes "
             "manifest.json with a SHA-256 index)."
         ),
     )
@@ -60,7 +60,7 @@ def build_parser() -> argparse.ArgumentParser:
     img = p.add_argument_group("image source (--source image)")
     img.add_argument("--velociraptor-bin", default=None,
                      help="Path to the Velociraptor binary. Resolution order: "
-                          "this flag -> DART_VELOCIRAPTOR_BIN -> ./bin/ -> PATH.")
+                          "this flag -> DFIR_VELOCIRAPTOR_BIN -> ./bin/ -> PATH.")
     img.add_argument("--artifact", default=None,
                      help="Velociraptor artifact to collect from the remapped "
                           "image (release-specific; overrides the default).")

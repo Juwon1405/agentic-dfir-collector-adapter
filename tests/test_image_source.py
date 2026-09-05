@@ -12,8 +12,8 @@ from pathlib import Path
 
 import pytest
 
-from dart_collector_adapter import cli, image_source
-from dart_collector_adapter.image_source import (
+from dfir_collector_adapter import cli, image_source
+from dfir_collector_adapter.image_source import (
     ImageExtractionError,
     VelociraptorNotFoundError,
     build_velociraptor_command,
@@ -84,19 +84,19 @@ def test_resolution_uses_env(tmp_path, monkeypatch):
     binpath = tmp_path / "velociraptor"
     binpath.write_text("#!/bin/sh\n")
     binpath.chmod(0o755)
-    monkeypatch.setenv("DART_VELOCIRAPTOR_BIN", str(binpath))
+    monkeypatch.setenv("DFIR_VELOCIRAPTOR_BIN", str(binpath))
     assert resolve_velociraptor_bin() == str(binpath.resolve())
 
 
 def test_resolution_missing_raises_actionable(monkeypatch):
-    monkeypatch.delenv("DART_VELOCIRAPTOR_BIN", raising=False)
+    monkeypatch.delenv("DFIR_VELOCIRAPTOR_BIN", raising=False)
     monkeypatch.setattr(image_source.shutil, "which", lambda name: None)
     monkeypatch.setattr(image_source, "_staged_bin_dir",
                         lambda: Path("/nonexistent/bin"))
     with pytest.raises(VelociraptorNotFoundError) as exc:
         resolve_velociraptor_bin()
     msg = str(exc.value)
-    assert "DART_VELOCIRAPTOR_BIN" in msg and "--velociraptor-bin" in msg
+    assert "DFIR_VELOCIRAPTOR_BIN" in msg and "--velociraptor-bin" in msg
 
 
 # --------------------------------------------------------------------------- #
@@ -159,7 +159,7 @@ def test_mocked_image_cleans_temp(tmp_path, monkeypatch):
 
 def test_image_missing_binary_returns_5(tmp_path, monkeypatch):
     img = _fake_image(tmp_path / "disk.dd")
-    monkeypatch.delenv("DART_VELOCIRAPTOR_BIN", raising=False)
+    monkeypatch.delenv("DFIR_VELOCIRAPTOR_BIN", raising=False)
     monkeypatch.setattr(image_source.shutil, "which", lambda name: None)
     monkeypatch.setattr(image_source, "_staged_bin_dir",
                         lambda: Path("/nonexistent/bin"))

@@ -1,4 +1,4 @@
-"""Module entrypoint so ``python3 -m dart_collector_adapter ...`` works."""
+"""Module entrypoint so ``python3 -m dfir_collector_adapter ...`` works."""
 from __future__ import annotations
 
 import sys
