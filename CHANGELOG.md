@@ -13,10 +13,18 @@ release line.
   `dart_collector_adapter` / `dart-collector-adapter` / `DART_VELOCIRAPTOR_BIN`).
   Update imports, shell aliases, and environment files accordingly.
 - Version bumped to `2.0.0` because the import path and CLI name changed.
-- Roadmap phases renumbered onto the v2.x line (`v2.1`–`v2.3`); their scope is
-  unchanged.
   No functional change: layout classification, `manifest.json` schema `1.2`,
   exit codes, and the `--source {zip,image}` behaviour are identical to `1.0.1`.
+- Roadmap phases renumbered onto the v2.x line (`v2.1`–`v2.3`); their scope is
+  unchanged.
+
+### Fixed
+- `README.md` hand-off section names the core runner `analyze.py` (the file was
+  renamed from `run_eval.py` in June).
+- `scripts/fetch-responder-binaries.sh` installs the adapter from the
+  repository root (it pointed `pip install -e` at `scripts/`, which has no
+  `pyproject.toml`) and stages the binaries under `./bin/velociraptor/` as the
+  README documents, instead of `scripts/bin/`. Its usage text names itself.
 
 ## [1.0.1] — 2026-06-10 — Collision-safe manifest provenance
 

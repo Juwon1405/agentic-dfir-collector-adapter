@@ -278,15 +278,15 @@ Exit codes are stable and scriptable:
 ### 3. Hand off to Agentic-DFIR
 
 The adapter writes `evidence_root/manifest.json`; Agentic-DFIR consumes that
-layout. For a real investigation, point its `run_eval.py` at the
+layout. For a real investigation, point its `analyze.py` at the
 `evidence_root/` this adapter produced:
 
 ```bash
 # in the agentic-dfir repo, after authenticating (export ANTHROPIC_API_KEY=...)
-python3 run_eval.py --evidence /evidence/case-2026-001/ --case-id case-2026-001 --max-iterations 25
+python3 analyze.py --evidence /evidence/case-2026-001/ --case-id case-2026-001 --max-iterations 25
 ```
 
-(`run_eval.py --case <tier>/case-NN` is for the repo's bundled benchmark
+(`analyze.py --case <tier>/case-NN` is for the repo's bundled benchmark
 cases; `--evidence <path>` is the real-evidence entry point.)
 
 Agentic-DFIR reads `manifest.json` as the chain-of-custody seed and writes its

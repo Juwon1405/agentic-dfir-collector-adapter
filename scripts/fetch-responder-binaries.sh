@@ -18,11 +18,11 @@
 # Run this on the analysis server (Linux or macOS). It does NOT install
 # anything on incident hosts; it only stages binaries for distribution.
 #
-# Usage:
-#   ./install.sh                       # full setup
-#   VELO_VERSION=0.74.0 ./install.sh   # pin a specific Velociraptor version
-#   ./install.sh --no-velociraptor     # adapter only (skip binaries)
-#   ./install.sh --skip-checksum       # skip SHA-256 verification (NOT recommended)
+# Usage (from the repository root):
+#   bash scripts/fetch-responder-binaries.sh                     # adapter + all binaries
+#   VELO_VERSION=0.74.0 bash scripts/fetch-responder-binaries.sh # pin a Velociraptor version
+#   bash scripts/fetch-responder-binaries.sh --no-velociraptor   # adapter only (skip binaries)
+#   bash scripts/fetch-responder-binaries.sh --skip-checksum     # skip SHA-256 verification (NOT recommended)
 # ===========================================================================
 set -euo pipefail
 
@@ -30,7 +30,8 @@ set -euo pipefail
 VELO_VERSION="${VELO_VERSION:-0.73.4}"
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-BIN_DIR="${SCRIPT_DIR}/bin/velociraptor"
+REPO_DIR="$(cd "${SCRIPT_DIR}/.." && pwd)"
+BIN_DIR="${REPO_DIR}/bin/velociraptor"
 SKIP_VELO=0
 SKIP_CHECKSUM=0
 for arg in "$@"; do
@@ -96,7 +97,7 @@ if [[ -z "${PYTHON_BIN}" ]]; then
     echo "error: python3 not found on PATH" >&2
     exit 1
 fi
-"${PYTHON_BIN}" -m pip install --upgrade --user -e "${SCRIPT_DIR}" >/dev/null
+"${PYTHON_BIN}" -m pip install --upgrade --user -e "${REPO_DIR}" >/dev/null
 echo "    adapter installed: $(command -v dfir-collector-adapter 2>/dev/null || echo '(use python -m dfir_collector_adapter.cli)')"
 
 # ---------------------------------------------------------------------------
