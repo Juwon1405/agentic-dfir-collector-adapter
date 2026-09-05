@@ -139,19 +139,19 @@ def diagram_roadmap():
             ha="center", va="top", fontsize=15, fontweight="bold", color=TEXT_PRI)
 
     phases = [
-        ("v1.0.1", "current",
+        ("v2.0.0", "current",
          ["Velociraptor ZIP", "  to evidence_root",
           "manifest 1.2", "source-member provenance"],
          ADAPTER, True),
-        ("v1.1", "next",
+        ("v2.1", "next",
          ["sidecar generation", "PECmd · AmcacheParser",
           "EvtxECmd auto-invoke", "when available locally"],
          "#5bc4b8", False),
-        ("v1.2", "later",
+        ("v2.2", "later",
          ["Velociraptor results/", "parsed-artifact JSON",
           "merged into manifest"],
          MANIFEST, False),
-        ("v1.3", "later",
+        ("v2.3", "later",
          ["macOS + Linux", "artifact coverage",
           "parity with Windows"],
          TEXT_SEC, False),

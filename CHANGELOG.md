@@ -13,6 +13,8 @@ release line.
   `dart_collector_adapter` / `dart-collector-adapter` / `DART_VELOCIRAPTOR_BIN`).
   Update imports, shell aliases, and environment files accordingly.
 - Version bumped to `2.0.0` because the import path and CLI name changed.
+- Roadmap phases renumbered onto the v2.x line (`v2.1`–`v2.3`); their scope is
+  unchanged.
   No functional change: layout classification, `manifest.json` schema `1.2`,
   exit codes, and the `--source {zip,image}` behaviour are identical to `1.0.1`.
 

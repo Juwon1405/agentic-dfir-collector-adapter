@@ -459,9 +459,9 @@ Because forking 100k+ lines of Go to add one Python adapter would be insane.
 |-----------|----------|--------------------------------------------------------------------------------------------------|
 | **v2.0.0** | current  | Renamed to agentic-dfir-collector-adapter alongside Agentic-DFIR: package `dfir_collector_adapter`, CLI `dfir-collector-adapter`, env `DFIR_VELOCIRAPTOR_BIN`. No behaviour change. |
 | **v1.0.1** | shipped  | Velociraptor ZIP → evidence_root with SHA-256 manifest 1.2; hardened integrity (input-ZIP SHA-256 anchor, persisted skip log, collision-safe source-member provenance, overwrite-safe), ZIP-bomb + symlink defenses, single-pass hashing, mtime preservation, install-time binary checksum verification. Full test suite passing locally on Python 3.11. |
-| **v1.1**  | next     | Sidecar generation — auto-invoke `PECmd`, `AmcacheParser`, `EvtxECmd` when present locally.       |
-| **v1.2**  | later    | Ingest Velociraptor `results/*.json` (parsed-artifact JSON) and merge into the manifest.          |
-| **v1.3**  | later    | macOS + Linux artifact coverage parity with Windows.                                              |
+| **v2.1**  | next     | Sidecar generation — auto-invoke `PECmd`, `AmcacheParser`, `EvtxECmd` when present locally.       |
+| **v2.2**  | later    | Ingest Velociraptor `results/*.json` (parsed-artifact JSON) and merge into the manifest.          |
+| **v2.3**  | later    | macOS + Linux artifact coverage parity with Windows.                                              |
 
 The adapter is intentionally narrow. It will not grow into a "platform."
 

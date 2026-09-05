@@ -12,7 +12,7 @@ Things that **belong** here:
 - New artifact patterns in `src/dfir_collector_adapter/layout.py`
 - Improvements to `manifest.json` integrity (extra fields, stronger hashing)
 - Bug fixes in path-safety, ZIP traversal handling, large-file streaming
-- Sidecar parser invocation (e.g., calling `EvtxECmd` when available) — planned for v1.1
+- Sidecar parser invocation (e.g., calling `EvtxECmd` when available) — planned for v2.1
 - New tests
 
 Things that **do not belong** here:
