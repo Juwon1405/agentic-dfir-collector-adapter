@@ -4,6 +4,12 @@ All notable changes to **agentic-dfir-collector-adapter** are documented here.
 The adapter follows the [Agentic-DFIR](https://github.com/Juwon1405/agentic-dfir)
 release line.
 
+## [Unreleased]
+
+### Changed
+- README links to the core project's rollout roadmap follow it to
+  `docs/roadmap.md` (the core README is now a landing page).
+
 ## [2.0.0] — 2026-09-05 — Renamed to agentic-dfir-collector-adapter
 
 ### Changed

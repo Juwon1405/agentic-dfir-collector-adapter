@@ -3,7 +3,7 @@
 [![tests](https://github.com/Juwon1405/agentic-dfir-collector-adapter/actions/workflows/tests.yml/badge.svg)](https://github.com/Juwon1405/agentic-dfir-collector-adapter/actions/workflows/tests.yml)
 [![Python](https://img.shields.io/badge/python-3.10%2B-3776AB?logo=python&logoColor=white)](https://www.python.org/)
 [![License](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
-[![Phase](https://img.shields.io/badge/phase-1.3%20%C2%B7%20Agentic--DFIR%20roadmap-FF8B00)](https://github.com/Juwon1405/agentic-dfir#phase-1-rollout-roadmap)
+[![Phase](https://img.shields.io/badge/phase-1.3%20%C2%B7%20Agentic--DFIR%20roadmap-FF8B00)](https://github.com/Juwon1405/agentic-dfir/blob/main/docs/roadmap.md#phase-1-rollout-roadmap)
 [![Companion](https://img.shields.io/badge/companion-Agentic--DFIR-DD2C00?logo=github)](https://github.com/Juwon1405/agentic-dfir)
 
 > **A thin Python layer that turns Velociraptor offline-collector output into the `evidence_root` layout expected by [Agentic-DFIR](https://github.com/Juwon1405/agentic-dfir).**
@@ -22,7 +22,7 @@ The adapter installs **once** on the analysis server. It is **not** installed on
 
 ## Position in the Agentic-DFIR roadmap
 
-This repository is **Phase 1.3** of the [Agentic-DFIR rollout roadmap](https://github.com/Juwon1405/agentic-dfir#phase-1-rollout-roadmap) — the *collector adapter* deliverable. It exists so the upstream collection layer (Velociraptor) and the upstream analysis engine (Agentic-DFIR) can stay independent of each other.
+This repository is **Phase 1.3** of the [Agentic-DFIR rollout roadmap](https://github.com/Juwon1405/agentic-dfir/blob/main/docs/roadmap.md#phase-1-rollout-roadmap) — the *collector adapter* deliverable. It exists so the upstream collection layer (Velociraptor) and the upstream analysis engine (Agentic-DFIR) can stay independent of each other.
 
 | Concern                  | Where it lives                                                                                                       |
 |--------------------------|----------------------------------------------------------------------------------------------------------------------|
